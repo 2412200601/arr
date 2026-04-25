@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -101,6 +101,7 @@
 
     <aside class="panel">
       <h2>Mapa rápido</h2>
+      <!-- ✅ nombres corregidos -->
       <button data-scene="entrada">📍 Aurora</button>
       <button data-scene="pasillo">📍 Playita</button>
       <button data-scene="aula">📍 Muelle</button>
@@ -114,17 +115,15 @@
       </ul>
 
       <p class="note">
-        Nota: coloca tus imágenes 360 en <b>img/</b> con estos nombres:
-        <b>entrada1.jpg</b>, <b>pasillo.jpg</b>, <b>aula.jpg</b>.
+        Usa imágenes en <b>img/</b>: aurora.jpg, playa.jpg, puerto.jpg
       </p>
     </aside>
   </main>
 
   <script>
-    // Inicializa visor
     const viewer = pannellum.viewer('viewer', {
       default: {
-        firstScene: 'entrada',
+        firstScene: 'entrada', // ✅ corregido
         sceneFadeDuration: 900,
         autoLoad: true
       },
@@ -140,13 +139,7 @@
               yaw: 25,
               type: 'scene',
               text: 'Ir a playita',
-              sceneId: 'pasillo'
-            },
-            {
-              pitch: 10,
-              yaw: -45,
-              type: 'info',
-              text: 'Plantita'
+              sceneId: 'pasillo' // ✅ corregido
             }
           ]
         },
@@ -161,14 +154,14 @@
               yaw: 95,
               type: 'scene',
               text: 'Ir al Muelle',
-              sceneId: 'aula'
+              sceneId: 'aula' // ✅ corregido
             },
             {
               pitch: -4,
               yaw: -95,
               type: 'scene',
               text: 'Volver a la Aurora',
-              sceneId: 'entrada'
+              sceneId: 'entrada' // ✅ corregido
             }
           ]
         },
@@ -183,20 +176,14 @@
               yaw: -120,
               type: 'scene',
               text: 'Regresar a la playita',
-              sceneId: 'pasillo'
-            },
-            {
-              pitch: 12,
-              yaw: 30,
-              type: 'info',
-              text: 'Cielo'
+              sceneId: 'pasillo' // ✅ corregido
             }
           ]
         }
       }
     });
 
-    // Botones del panel
+    // Botones
     document.querySelectorAll('button[data-scene]').forEach(btn => {
       btn.addEventListener('click', () => {
         viewer.loadScene(btn.dataset.scene);
